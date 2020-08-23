@@ -2,8 +2,6 @@
 
 By @ItsVixano
 
----------------------------
-
 ## Features
 
 -   Telegram implementation
@@ -12,12 +10,10 @@ By @ItsVixano
 
 ***If u want , u can create a pull request to improve the code type of those scripts !!***
 
----------------------------
+### Attachments
 
 **regen.sh** will be used to regen the defconfig
 
 **build.sh** will be for building kernels on local machine 
 
 **build_ci.sh** will be used for compiling kernel on any type of ci/cd service 
-
----------------------------
