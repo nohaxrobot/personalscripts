@@ -14,4 +14,6 @@ By @ItsVixano
 
 **Kernel** used to compile Android kernels with telegram implementation
 
+**twrp** used to compile TWRP with telegram implementation
+
 ---------------------------
