@@ -203,7 +203,7 @@ CH=$(cat changelog.txt)
                 java -jar zipsigner-3.0.jar "$ZIP".zip "$ZIP"-signed.zip
                 tg_post_msg "<b>Kernel Successfully Compiled For $DEVICE $CODENAME</b>%0A%0A<b>Date : </b><code>$(TZ=Europe/Rome date)</code>%0A<b>Device :</b> <code>$CODENAME</code>%0A<b>Kernel Version :</b> <code>$KERVER</code>%0A%0A<b>Compiler used :</b> <code>$KBUILD_COMPILER_STRING</code>%0A%0A<b>Kernel Zip Name :</b> <code>$ZIP</code>" "$CHATID"
                 tg_post_msg "<b>Changelog:</b>%0A%0A<code>$CH</code>" "$CHATID"
-                tg_post_build "$ZIP""$ZIP"-signed.zip "$CHATID"
+                tg_post_build "$ZIP"-signed.zip "$CHATID"
                 cd ..
                 rm -rf error.log
                 rm -rf out
