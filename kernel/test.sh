@@ -173,7 +173,7 @@ make "$DEFCONFIG" O=out
 echo -e "$yellow << compiling the kernel >> \n $white"
 tg_post_msg "<code>Building Image.gz-dtb</code>" "$CHATID"
 
-build_kernel
+build_kernel || error=true
 
 DATE=$(date +"%Y%m%d-%H%M%S")
 KERVER=$(make kernelversion)
@@ -187,7 +187,7 @@ CH=$(cat changelog.txt)
                 rm -rf out
                 rm -rf testing.log
                 rm -rf error.log
-                exit
+                exit 1
         fi
 
         if [ -f "$IMG" ]; then
@@ -198,7 +198,7 @@ CH=$(cat changelog.txt)
                 cd zip
                 mv Image.gz-dtb zImage
                 export ZIPs="$KERNEL_NAME"-"$CODENAME"-"$DATE".zip
-				export ZIP="$KERNEL_NAME"-"$CODENAME"-"$DATE-signed.zip"
+                export ZIP="$KERNEL_NAME"-"$CODENAME"-"$DATE-signed.zip"
                 zip -r "$ZIPs" *
                 curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/baalajimaestro/AnyKernel2/master/zipsigner-3.0.jar
                 java -jar zipsigner-3.0.jar "$ZIPs" "$ZIP"
