@@ -67,7 +67,7 @@ AnyKernelbranch="ysl"
 HOSST="circleci"
 USEER="ItsVixano"
 
-TOOLCHAIN="clang"
+TOOLCHAIN="gcc"
 
 # setup telegram env
 export BOT_MSG_URL="https://api.telegram.org/bot$API_BOT/sendMessage"
