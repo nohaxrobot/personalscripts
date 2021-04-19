@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 Fox kernel project
+# Copyright (C) 2020 ItsVixano
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -106,7 +106,7 @@ tg_error() {
 if [ "$TOOLCHAIN" == gcc ]; then
 	if [ ! -d "$HOME/gcc64" ] && [ ! -d "$HOME/gcc32" ]
 	then
-		echo -e "$green << cloning gcc from arter >> \n $white"
+		echo -e "$green << cloning EvaGCC >> \n $white"
 		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64 "$HOME"/gcc64
 		git clone --depth=1 https://github.com/mvaisakh/gcc-arm "$HOME"/gcc32
 	fi
