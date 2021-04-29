@@ -199,6 +199,7 @@ CH=$(cat changelog.txt)
 		cd stuffs
 		zip -r stuffs.zip *
 		STUFFS=$(curl --upload-file stuffs.zip https://transfer.sh/)
+		cd ..
                 echo -e "$green << cloning AnyKernel from your repo >> \n $white"
                 git clone "$AnyKernel" --single-branch -b "$AnyKernelbranch" zip
                 echo -e "$yellow << making kernel zip >> \n $white"
