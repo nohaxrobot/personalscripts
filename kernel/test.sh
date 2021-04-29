@@ -191,6 +191,14 @@ CH=$(cat changelog.txt)
         fi
 
         if [ -f "$IMG" ]; then
+		echo -e "$green << Upload things >> \n $white"
+		cd out
+		mkdir stuffs
+		mv vmlinux* stuffs/
+		mv System.map stuffs/
+		cd stuffs
+		zip -r stuffs.zip *
+		STUFFS=$(curl --upload-file stuffs.zip https://transfer.sh/)
                 echo -e "$green << cloning AnyKernel from your repo >> \n $white"
                 git clone "$AnyKernel" --single-branch -b "$AnyKernelbranch" zip
                 echo -e "$yellow << making kernel zip >> \n $white"
@@ -202,7 +210,7 @@ CH=$(cat changelog.txt)
                 curl -sLo zipsigner-3.0.jar https://raw.githubusercontent.com/baalajimaestro/AnyKernel2/master/zipsigner-3.0.jar
                 java -jar zipsigner-3.0.jar "$ZIP".zip "$ZIP"-signed.zip
                 tg_post_msg "<b>Kernel Successfully Compiled For $DEVICE $CODENAME</b>%0A%0A<b>Date : </b><code>$(TZ=Europe/Rome date)</code>%0A<b>Device :</b> <code>$CODENAME</code>%0A<b>Kernel Version :</b> <code>$KERVER</code>%0A%0A<b>Compiler used :</b> <code>$KBUILD_COMPILER_STRING</code>%0A%0A<b>Kernel Zip Name :</b> <code>$ZIP</code>" "$CHATID"
-                tg_post_msg "<b>Changelog:</b>%0A%0A<code>$CH</code>" "$CHATID"
+                tg_post_msg "<b>Stuffs:</b>%0A%0A<code>$STUFFS</code>" "$CHATID"
                 tg_post_build "$ZIP"-signed.zip "$CHATID"
                 cd ..
                 rm -rf error.log
