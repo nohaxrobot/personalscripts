@@ -57,11 +57,11 @@ API_BOT="$api"
 
 DEVICE="Redmi S2/Y2"
 CODENAME="ysl"
-KERNEL_NAME="StormBreaker"
+KERNEL_NAME="flasho"
 
 DEFCONFIG="ysl-perf_defconfig"
 
-AnyKernel="https://github.com/stormbreaker-project/AnyKernel3"
+AnyKernel="https://github.com/fladhokiller/AnyKernel3"
 AnyKernelbranch="ysl"
 
 HOSST="circleci"
