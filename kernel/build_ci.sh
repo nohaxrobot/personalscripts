@@ -52,19 +52,19 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 #
 # TOOLCHAIN = the toolchain u want to use "gcc/clang"
 
-DEVICE=""
-CODENAME=""
-KERNEL_NAME=""
+DEVICE="redmis2"
+CODENAME="ysl"
+KERNEL_NAME="flasho"
 
-DEFCONFIG=""
+DEFCONFIG="ysl_perf-defconfig"
 
-AnyKernel=""
-AnyKernelbranch=""
+AnyKernel="https://GitHub.com/flashokiller/AnyKernel3"
+AnyKernelbranch="master"
 
-HOSST=""
-USEER=""
+HOSST="circle-ci"
+USEER="flashokiller"
 
-TOOLCHAIN=""
+TOOLCHAIN="gcc"
 
 # setup telegram env
 export BOT_MSG_URL="https://api.telegram.org/bot$API_BOT/sendMessage"
