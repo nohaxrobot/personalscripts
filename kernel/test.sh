@@ -61,11 +61,11 @@ KERNEL_NAME="flasho"
 
 DEFCONFIG="ysl-perf_defconfig"
 
-AnyKernel="https://github.com/fladhokiller/AnyKernel3"
-AnyKernelbranch="ysl"
+AnyKernel="https://github.com/flashokiller/AnyKernel3#readme"
+AnyKernelbranch="master"
 
-HOSST="circleci"
-USEER="ItsVixano"
+HOSST="ubuntu"
+USEER="flashokiller"
 
 TOOLCHAIN="clang"
 
