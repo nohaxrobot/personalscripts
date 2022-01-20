@@ -54,7 +54,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 DEVICE="redmi"
 CODENAME="mi439"
-KERNEL_NAME="darkness kernel"
+KERNEL_NAME="darkness-kernel"
 
 DEFCONFIG="mi439-perf_defconfig"
 
