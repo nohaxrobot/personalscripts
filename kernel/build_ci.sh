@@ -169,7 +169,6 @@ build_kernel || error=true
 
 DATE=$(date +"%Y%m%d-%H%M%S")
 KERVER=$(make kernelversion)
-CH=$(cat changelog.txt)
 
         if [ -f "$IMG" ]; then
                 echo -e "$green << Build completed in $(($Diff / 60)) minutes and $(($Diff % 60)) seconds >> \n $white"
