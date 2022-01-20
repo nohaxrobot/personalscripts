@@ -52,19 +52,19 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 #
 # TOOLCHAIN = the toolchain u want to use "gcc/clang"
 
-DEVICE="redmis2"
-CODENAME="ysl"
-KERNEL_NAME="flasho"
+DEVICE="redmi"
+CODENAME="mi439"
+KERNEL_NAME="darkness kernel"
 
-DEFCONFIG="ysl_perf-defconfig"
+DEFCONFIG="mi439-perf_defconfig"
 
-AnyKernel="https://GitHub.com/flashokiller/AnyKernel3"
-AnyKernelbranch="master"
+AnyKernel="https://github.com/flashokillerify/AnyKernel3/"
+AnyKernelbranch="pine-S"
 
-HOSST="circle-ci"
-USEER="flashokiller"
+HOSST="circleci"
+USEER="flasho"
 
-TOOLCHAIN="gcc"
+TOOLCHAIN="clang"
 
 # setup telegram env
 export BOT_MSG_URL="https://api.telegram.org/bot$API_BOT/sendMessage"
@@ -191,7 +191,7 @@ CH=$(cat changelog.txt)
                 mv Image.gz-dtb zImage
                 export ZIP="$KERNEL_NAME"-"$CODENAME"-"$DATE".zip
                 zip -r "$ZIP" *
-                tg_post_msg "<b>Kernel Successfully Compiled For $DEVICE $CODENAME</b>%0A%0A<b>Date : </b><code>$(TZ=Europe/Rome date)</code>%0A<b>Device :</b> <code>$CODENAME</code>%0A<b>Kernel Version :</b> <code>$KERVER</code>%0A%0A<b>Compiler used :</b> <code>$KBUILD_COMPILER_STRING</code>%0A%0A<b>Kernel Zip Name :</b> <code>$ZIP</code>" "$CHATID"
+                tg_post_msg "<b>Kernel Successfully Compiled For UNIFIED $CODENAME</b>%0A%0A<b>Date : </b><code>$(TZ=Europe/Rome date)</code>%0A<b>Device :</b> <code>$CODENAME</code>%0A<b>Kernel Version :</b> <code>$KERVER</code>%0A%0A<b>Compiler used :</b> <code>$KBUILD_COMPILER_STRING</code>%0A%0A<b>Kernel Zip Name :</b> <code>$ZIP</code>" "$CHATID"
                 tg_post_msg "<b>Changelog:</b>%0A%0A<code>$CH</code>" "$CHATID"
                 tg_post_build "$ZIP" "$CHATID"
                 cd ..
