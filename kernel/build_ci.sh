@@ -52,9 +52,6 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 #
 # TOOLCHAIN = the toolchain u want to use "gcc/clang"
 
-CHAT_ID="-1001753745893"
-API_BOT="5050120757:AAG_4IfTo4i_qduplctyP13583mvT8I5Q34"
-
 DEVICE="redmi"
 CODENAME="mi439"
 KERNEL_NAME="darkness kernel"
